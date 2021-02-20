@@ -38,7 +38,7 @@ site:
 
 # config
 config:
-  skin: # 主题颜色 theme-black theme-blue theme-green theme-purple
+  skin: theme-black # 主题颜色 theme-black theme-blue theme-green theme-purple
   layout: main-center # 布局方式 main-left main-center main-right
   toc: true # 是否开启文章章节目录导航
   menu_highlight: false # 是否开启当前菜单高亮显示
@@ -79,7 +79,7 @@ fancybox: false
 # Search
 search:
   insight: true # you need to install `hexo-generator-json-content` before using Insight Search
-  baidu: false # you need to disable other search engines to use Baidu search
+  baidu: false # you need to disable other search engines to use Baidu search, options: true, false
 
 # Donate
 donate:
@@ -102,14 +102,14 @@ share:
 
 # Github
 github: 
-  username: cofess  # github username
+  username: ***
 
 # Comment
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
 comment:
-  type: valine  # 启用哪种评论系统
-  disqus:  # enter disqus shortname here
+  type: youyan
+  disqus: # enter disqus shortname here
   youyan: 
     uid: 1783844 # enter youyan uid 
   livere:

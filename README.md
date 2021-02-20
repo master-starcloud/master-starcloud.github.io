@@ -1,98 +1,184 @@
-# Minimalism
+# pure
 
-[![Build Status](https://travis-ci.org/showzeng/Minimalism.svg?branch=master)](https://travis-ci.org/showzeng/Minimalism)
-[![Jekyll Version](https://img.shields.io/badge/Jekyll-3.8-blue.svg)](https://jekyllrb.com/)
-[![Gem Version](https://badge.fury.io/rb/jekyll-theme-minimalism.svg)](https://badge.fury.io/rb/jekyll-theme-minimalism)
-[![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg?style=popout)](./LICENSE.txt)
+A brand new default theme for [[Hexo](https://hexo.io)].  [Preview](http://cofess.github.io/) | [中文说明文档](README.cn.md) | [iconfont](http://blog.cofess.com/hexo-theme-pure/iconfont/demo_fontclass.html)
 
-![screenshot](./docs/screenshot.png)
+![](screenshot/pure.png)
 
-Minimalism 是一款基于 Jekyll 为极简主义者打造的极简主题。你可以访问 [我的博客][blog] 或者 [主题 demo][demo] 来预览一下。
+## Features
 
-## 特性
+- Multiple languages support
+- Comment support
+- Tags page
+- Categories page
+- Social Media
 
-**V0.1.x**
-- 这款主题采用响应式布局，对各大主流浏览器做了兼容，对移动客户端做了适配
-- 支持 RSS 订阅
-- SEO 优化
-- 文章默认采用 [CC BY-NC-ND 4.0][license] 协议对著作权进行保护，支持 emoji 表情
-- 支持禁止复制、禁止右键菜单、复制附带版权声明等多种功能
-- 支持文章图片查看大图
-- 支持文章打赏 (微信、支付宝)
-- 支持评论功能 (目前支持来必力、gitment)
-- 支持站点统计 (目前支持谷歌统计、百度统计、友盟 cnzz 统计)
-- 最后且最重要的当然还是对博客文章极度的阅读体验优化
+## Skins
 
-## 安装
+![](screenshot/pure-theme-black.png)
 
-在你的 `Gemfile` 文件中加入下面这一行:
+![](screenshot/pure-theme-blue.png)
 
-```ruby
-gem "jekyll-theme-minimalism"
+![](screenshot/pure-theme-green.png)
+
+![](screenshot/pure-theme-purple.png)
+
+## Appearance
+
+[Home](http://cofess.github.io/) | [Archives](http://cofess.github.io/archives/) | [Categories](http://cofess.github.io/categories/) | [Tags](http://cofess.github.io/tags/) | [Repository](http://cofess.github.io/repository/) | [Books](http://cofess.github.io/books/) | [Links](http://cofess.github.io/links/) | [About](http://cofess.github.io/about/)
+
+## Install theme
+
+Execute the following command under your `hexo` folder.
+
+```
+git clone https://github.com/cofess/hexo-theme-pure.git themes/pure
+```
+Then modify the property `theme` of the file `hexo/_config.yml`  to `theme: pure`
+
+## Update theme
+
+Execute the following command to update theme.
+
+```
+cd themes/pure
+git pull
+```
+## Install plugin
+
+### [hexo-wordcount](https://github.com/willin/hexo-wordcount)
+
+```
+npm install hexo-wordcount --save
+```
+### [hexo-generator-json-content](https://github.com/alexbruno/hexo-generator-json-content)
+
+```
+npm install hexo-generator-json-content --save
+```
+### [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
+
+```
+npm install hexo-generator-feed --save
+```
+### [hexo-generator-sitemap](https://github.com/hexojs/hexo-generator-sitemap)
+
+```
+npm install hexo-generator-sitemap --save
+```
+### [hexo-generator-baidu-sitemap](https://github.com/coneycode/hexo-generator-baidu-sitemap)
+
+```
+npm install hexo-generator-baidu-sitemap --save
+```
+## Data files
+Sometimes you may need to use some data in templates which is not directly available in your posts, or you want to reuse the data elsewhere. For such use cases, Hexo 3 introduced the new Data files. This feature loads YAML or JSON files in source/_data folder so you can use them in your site.
+
+For example, add links.yml in source/_data folder.
+
+### links data
+
+add links.yml in source/_data folder.
+
+The format of the link :
+
+```
+Name:
+    link: http://example.com
+    avatar: http://example.com/avatar.png
+    desc: description
+```
+Add a number of links, we just need to repeat the format according to the above.
+
+## Blog optimization
+
+### [hexo-neat](https://github.com/rozbo/hexo-neat)
+
+> auto Minify html、js、css and make it neat
+
+```
+npm install hexo-neat --save
 ```
 
-然后使用 bundle 执行安装:
+You can configure this plugin in `_config.yml`.
 
-    $ bundle install
-
-或者你也可以手动下载安装:
-
-    $ gem install jekyll-theme-minimalism
-
-在你的配置文件 `_config.yml` 中修改启用主题 (本地预览):
-
-```yaml
-theme: jekyll-theme-minimalism
+```
+# hexo-neat
+neat_enable: true
+neat_html:
+  enable: true
+  exclude:  
+neat_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js' 
 ```
 
-使用 GitHub pages 发布时，在你的配置文件 `_config.yml` 中修改启用远程主题:
+### [hexo-baidu-url-submit](https://github.com/huiwang/hexo-baidu-url-submit)
 
-```yaml
-# theme: jekyll-theme-minimalism
-remote_theme: showzeng/Minimalism
+```
+npm install hexo-baidu-url-submit --save
 ```
 
-## 使用
+### [hexo-translate-title](https://github.com/cometlj/hexo-translate-title)
+> translate the chinese title of Hexo blog to english words automatially
 
-移步 [wiki] 或者查看 [demo]。
+```
+npm install hexo-translate-title --save
+```
 
-## 支持
+You can configure this plugin in `_config.yml`.
 
-如果你觉得这个主题还不错，欢迎 star 或使用。你也可以自由的 fork，基于本主题打造你自己的主题，当然，希望最好是能署名或提及本博客主题。
+```yml
+translate_title:
+  translate_way: google    #google | baidu | youdao
+  youdao_api_key: XXX
+  youdao_keyfrom: XXX
+  is_need_proxy: true     #true | false
+  proxy_url: http://localhost:8123
+```
+## Mathjax Support
 
-此外你有什么好的建议、需求或者是碰到什么问题，欢迎提交 [issue]，本主题还会不断完善。
+### [hexo-renderer-markdown-it-plus](https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus)
 
-## 致谢
+install
 
-博客主题文章的文字颜色及部分排版受凯哥 [HenCoder] 网站的启发，打赏样式受 [写代码的猴子的博客][Jaeger] 的启发，特此感谢。
+```
+npm un hexo-renderer-marked --save
+npm i hexo-renderer-markdown-it-plus --save
+```
 
-文章图片查看大图由 [zooming](https://github.com/kingdido999/zooming) 提供支持，特此感谢。
+You can configure this plugin in `_config.yml`.
 
-## Todo
+```
+markdown_it_plus:
+  highlight: true
+  html: true
+  xhtmlOut: true
+  breaks: true
+  langPrefix:
+  linkify: true
+  typographer:
+  quotes: “”‘’
+  plugins:
+    - plugin:
+        name: markdown-it-katex
+        enable: true
+    - plugin:
+        name: markdown-it-mark
+        enable: false  
+```
 
-- [ ] Multilingual support (多语言支持)
-- [ ] Toc (文章索引目录)
-- [ ] Math support with LaTeX (数学公式支持)
+Article enable mathjax
 
-## Change log
+```
+title: Hello World
+mathjax: true
+```
 
-查看 [版本更新日志][Change Log]
-
-## 打赏
-
-如果主题对你有帮助，并帮你节省了一些折腾的时间，可以考虑打赏，这是对我所做工作的最大肯定。
-
-![reward.png](./docs/reward.webp)
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-[blog]: https://showzeng.itscoder.com
-[demo]: https://showzeng.github.io
-[license]: https://creativecommons.org/licenses/by-nc-nd/4.0/
-[wiki]: https://github.com/showzeng/Minimalism/wiki
-[issue]: https://github.com/showzeng/Minimalism/issues/new
-[Change Log]: https://github.com/showzeng/Minimalism/wiki/Change-Log
-[HenCoder]: https://hencoder.com/
-[Jaeger]: https://jaeger.itscoder.com/
