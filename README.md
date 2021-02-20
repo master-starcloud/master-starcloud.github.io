@@ -1,184 +1,82 @@
-# pure
+# 介绍
 
-A brand new default theme for [[Hexo](https://hexo.io)].  [Preview](http://cofess.github.io/) | [中文说明文档](README.cn.md) | [iconfont](http://blog.cofess.com/hexo-theme-pure/iconfont/demo_fontclass.html)
+[![Language](https://img.shields.io/badge/Jekyll-Theme-blue)](https://github.com/TMaize/tmaize-blog)
+[![license](https://img.shields.io/github/license/TMaize/tmaize-blog)](https://github.com/TMaize/tmaize-blog)
+[![GitHub stars](https://img.shields.io/github/stars/TMaize/tmaize-blog?style=social)](https://github.com/TMaize/tmaize-blog)
 
-![](screenshot/pure.png)
+一款 jekyll 主题（[GitHub 地址](https://github.com/TMaize/tmaize-blog)），简洁纯净(主题资源请求<20KB)，未引入任何框架，秒开页面，支持自适应，支持全文检索，支持夜间模式
 
-## Features
+你可以到[TMaize Blog](http://blog.tmaize.net/)查看主题效果，欢迎添加友链
 
-- Multiple languages support
-- Comment support
-- Tags page
-- Categories page
-- Social Media
+## 感谢
 
-## Skins
+[JetBrains](https://www.jetbrains.com/?from=tmaize-blog) 免费提供的开发工具[![JetBrains](./static/img/jetbrains.svg)](https://www.jetbrains.com/?from=tmaize-blog)
 
-![](screenshot/pure-theme-black.png)
+[夜间模式代码高亮配色]](https://github.com/mgyongyosi/OneDarkJekyll)
 
-![](screenshot/pure-theme-blue.png)
+# 本地运行
 
-![](screenshot/pure-theme-green.png)
+一般提交到 github 过个几十秒就可以看到效果，如果你需要对在本地查看效果需要安装 ruby 环境和依赖
 
-![](screenshot/pure-theme-purple.png)
+```bash
+# linux下需要gcc
 
-## Appearance
-
-[Home](http://cofess.github.io/) | [Archives](http://cofess.github.io/archives/) | [Categories](http://cofess.github.io/categories/) | [Tags](http://cofess.github.io/tags/) | [Repository](http://cofess.github.io/repository/) | [Books](http://cofess.github.io/books/) | [Links](http://cofess.github.io/links/) | [About](http://cofess.github.io/about/)
-
-## Install theme
-
-Execute the following command under your `hexo` folder.
-
-```
-git clone https://github.com/cofess/hexo-theme-pure.git themes/pure
-```
-Then modify the property `theme` of the file `hexo/_config.yml`  to `theme: pure`
-
-## Update theme
-
-Execute the following command to update theme.
-
-```
-cd themes/pure
-git pull
-```
-## Install plugin
-
-### [hexo-wordcount](https://github.com/willin/hexo-wordcount)
-
-```
-npm install hexo-wordcount --save
-```
-### [hexo-generator-json-content](https://github.com/alexbruno/hexo-generator-json-content)
-
-```
-npm install hexo-generator-json-content --save
-```
-### [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
-
-```
-npm install hexo-generator-feed --save
-```
-### [hexo-generator-sitemap](https://github.com/hexojs/hexo-generator-sitemap)
-
-```
-npm install hexo-generator-sitemap --save
-```
-### [hexo-generator-baidu-sitemap](https://github.com/coneycode/hexo-generator-baidu-sitemap)
-
-```
-npm install hexo-generator-baidu-sitemap --save
-```
-## Data files
-Sometimes you may need to use some data in templates which is not directly available in your posts, or you want to reuse the data elsewhere. For such use cases, Hexo 3 introduced the new Data files. This feature loads YAML or JSON files in source/_data folder so you can use them in your site.
-
-For example, add links.yml in source/_data folder.
-
-### links data
-
-add links.yml in source/_data folder.
-
-The format of the link :
-
-```
-Name:
-    link: http://example.com
-    avatar: http://example.com/avatar.png
-    desc: description
-```
-Add a number of links, we just need to repeat the format according to the above.
-
-## Blog optimization
-
-### [hexo-neat](https://github.com/rozbo/hexo-neat)
-
-> auto Minify html、js、css and make it neat
-
-```
-npm install hexo-neat --save
+# gem sources --add https://gems.ruby-china.com/
+# gem sources --remove https://rubygems.org/
+# gem sources --remove https://mirrors.aliyun.com/rubygems/
+# gem sources -l
+gem install bundler
+# bundle config mirror.https://rubygems.org https://gems.ruby-china.com
+bundle install
 ```
 
-You can configure this plugin in `_config.yml`.
+通过下面命令启动/编译项目
 
-```
-# hexo-neat
-neat_enable: true
-neat_html:
-  enable: true
-  exclude:  
-neat_css:
-  enable: true
-  exclude:
-    - '*.min.css'
-neat_js:
-  enable: true
-  mangle: true
-  output:
-  compress:
-  exclude:
-    - '*.min.js' 
+```bash
+bundle exec jekyll serve --watch --host=127.0.0.1 --port=8080
+bundle exec jekyll build --destination=dist
 ```
 
-### [hexo-baidu-url-submit](https://github.com/huiwang/hexo-baidu-url-submit)
+如果需要替换代码高亮的样式可以通过下面的命令生成 css
 
-```
-npm install hexo-baidu-url-submit --save
-```
-
-### [hexo-translate-title](https://github.com/cometlj/hexo-translate-title)
-> translate the chinese title of Hexo blog to english words automatially
-
-```
-npm install hexo-translate-title --save
+```bash
+rougify help style
+rougify style github > highlighting.css
 ```
 
-You can configure this plugin in `_config.yml`.
+# 项目配置
 
-```yml
-translate_title:
-  translate_way: google    #google | baidu | youdao
-  youdao_api_key: XXX
-  youdao_keyfrom: XXX
-  is_need_proxy: true     #true | false
-  proxy_url: http://localhost:8123
-```
-## Mathjax Support
+1. 如果使用自己的域名，`CNAME`文件里的内容请换成你自己的域名，然后 CNAME 解析到`用户名.github.com`
 
-### [hexo-renderer-markdown-it-plus](https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus)
+2. 如果使用 GitHub 的的域名，请删除`CNAME`文件,然后把你的项目修改为`用户名.github.io`
 
-install
+3. 修改`pages/about.md`中关于我的内容
 
-```
-npm un hexo-renderer-marked --save
-npm i hexo-renderer-markdown-it-plus --save
-```
+4. 修改`_config.yml`文件，具体作用请参考注释
 
-You can configure this plugin in `_config.yml`.
+5. 清空`post _posts`目录下所有文件，注意是清空，不是删除这两个目录
 
-```
-markdown_it_plus:
-  highlight: true
-  html: true
-  xhtmlOut: true
-  breaks: true
-  langPrefix:
-  linkify: true
-  typographer:
-  quotes: “”‘’
-  plugins:
-    - plugin:
-        name: markdown-it-katex
-        enable: true
-    - plugin:
-        name: markdown-it-mark
-        enable: false  
+6. 网站的 logo 和 favicon 放在了`static/img/`下，替换即可，大小无所谓，图片比例最好是 1:1
+
+7. 如果你是把项目 fork 过去的，想要删除我的提交记录可以先软重置到第一个提交，然后再提交一次，最后强制推送一次就行了
+
+# 使用
+
+文章放在`_posts`目录下，命名为`yyyy-MM-dd-xxxx-xxxx.md`，内容格式如下
+
+```yaml
+---
+layout: mypost
+title: 标题
+categories: [分类1, 分类2]
+---
+文章内容，Markdown格式
 ```
 
-Article enable mathjax
+文章资源放在`posts`目录，如文章文件名是`2019-05-01-theme-usage.md`，则该篇文章的资源需要放在`posts/2019/05/01`下,在文章使用时直接引用即可。当然了，写作的时候会提示资源不存在忽略即可
 
-```
-title: Hello World
-mathjax: true
-```
+```md
+![这是图片](xxx.png)
 
+[xxx.zip 下载](xxx.zip)
+```

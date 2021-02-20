@@ -1,5 +1,6 @@
-.DS_Store
-node_modules
-tmp
-source/CNAME
+/_site
+/dist
+/dist.tar.gz
+/Gemfile.lock
+/.jekyll-cache
 .idea
