@@ -6,7 +6,7 @@ title: 关于我
 > Hello ，欢迎访问 码农星云的博客 Blog
 
 
-主题是使用tmaize-blog，见[tmaize-blog](https://github.com/TMaize/tmaize-blog)，喜欢的话可以给个小星星。另外欢迎添加友链，在[留言板](chat.html)留言即可
+主题是使用tmaize-blog，见[tmaize-blog](https://github.com/TMaize/tmaize-blog)，喜欢的话可以给个小星星。另外欢迎添加友链，在可以在github上提个issue[issue](chat.html)留言即可
 
 ## 相关技能
 
